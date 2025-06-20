@@ -121,6 +121,9 @@ def determine_model_type():
 
 # Add model type determination in main program
 model_type, class_labels = determine_model_type()
+if class_labels is not None:
+    class_labels = sorted(class_labels)
+print(class_labels)
 
 if st.button("Analyze Calculation", key="calculate"):
     input_df = prepare_input_data()
